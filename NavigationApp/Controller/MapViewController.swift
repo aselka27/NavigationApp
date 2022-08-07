@@ -43,6 +43,26 @@ class MapViewController: UIViewController {
         return annotation
     }
     
+    var dordoiPlaza: MKPointAnnotation {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 42.8742, longitude: 74.6179)
+        annotation.title = "Dordoi Plaza"
+        annotation.subtitle = "Shopping centre"
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(region, animated: true)
+        return annotation
+    }
+    
+    var tsum: MKPointAnnotation {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 42.8762, longitude: 74.6145)
+        annotation.title = "Tsum"
+        annotation.subtitle = "Shopping centre"
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(region, animated: true)
+        return annotation
+    }
+    
     
     // MARK: - Lifecycle VC
     
@@ -83,6 +103,8 @@ class MapViewController: UIViewController {
     private func setMapView() {
         mapView.addAnnotation(aucaAnnotation)
         mapView.addAnnotation(kyrgyzKazakhUni)
+        mapView.addAnnotation(dordoiPlaza)
+        mapView.addAnnotation(tsum)
     }
     
     // MARK: - Helpers
